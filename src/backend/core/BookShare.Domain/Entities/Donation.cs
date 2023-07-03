@@ -33,7 +33,7 @@ namespace BookShare.Domain.Entities
 
         [Required]
         public DateTime DonationDate { get; set; }
-        public Donor Donors { get; set; }
+        public Donor? Donors { get; set; }
         public Recipient? Donations { get; set; }
 
     

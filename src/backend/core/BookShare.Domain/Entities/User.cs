@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookShare.Domain.Entities
 {
-    internal class User : BaseEntity
+    public class User : BaseEntity
     {
         public int UserId { get; set; }
 
