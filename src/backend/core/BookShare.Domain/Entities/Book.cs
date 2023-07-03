@@ -41,6 +41,7 @@ namespace BookShare.Domain.Entities
         public int CategoryId { get; set; }
 
         public ICollection<Donation>? Donations { get; set;}
+        public Category? Category { get; set; }
        
     }
 }
