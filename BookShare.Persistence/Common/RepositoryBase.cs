@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,11 +15,11 @@ namespace BookShare.Persistence.Common
         {
             RepositoryContext = repositoryContext;
         }
-        public void Create(T entity) =>  RepositoryContext.Set<T>().Add(entity);
-        
+        public void Create(T entity) => RepositoryContext.Set<T>().Add(entity);
+
 
         public void Delete(T entity) => RepositoryContext.Set<T>().Remove(entity);
-       
+
 
         public IQueryable<T> FindAll(bool trackChanges)
         {
@@ -42,8 +44,9 @@ namespace BookShare.Persistence.Common
         {
             RepositoryContext.Set<T>().Update(entity);
         }
-    {
-
 
     }
 }
+
+    
+
