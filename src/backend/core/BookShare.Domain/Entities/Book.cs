@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using BookShare.Domain.Common;
+using System.Collections;
 
 namespace BookShare.Domain.Entities
 {
@@ -25,7 +26,7 @@ namespace BookShare.Domain.Entities
 
         [Required(ErrorMessage = "The Category Code field is required.")]
         [ForeignKey(nameof(BookCategory))]
-        public string? BookCategoryName { get; set; }
+        public int BookCategoryId { get; set; }
 
         [MaxLength(20, ErrorMessage = "ISBN should not exceed 20 characters")]
         [Required(ErrorMessage = "The ISBN field is required.")]
@@ -39,14 +40,13 @@ namespace BookShare.Domain.Entities
         [Required(ErrorMessage = "The Publication Date field is required.")]
         public DateTime PublicationDate { get; set; }
 
-        [Required(ErrorMessage = "The Box Number field is required.")]
-        
-        public int BoxNumber { get; set; }
+        [ForeignKey(nameof(Donation))]
+        public int DonationId { get; set; }
 
-      /*  [Url]
-        public string BookImageUrl { get; set; }*/
+        /*  [Url]
+          public string BookImageUrl { get; set; }*/
 
-        public ICollection<Donation>? Donation { get; set; }
+        public Donation? Donation { get; set; }
         public BookCategory? BookCategory { get; set; }
     }
 }

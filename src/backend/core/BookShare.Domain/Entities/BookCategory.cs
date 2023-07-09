@@ -11,11 +11,12 @@ namespace BookShare.Domain.Entities
     {
         [Key]
         public int BookCategoryId { get; set; }
-
+      
         public string? BookCategoryName { get; set; }
-
+       
         public string? BookCategoryDescription { get; set; }
 
+        //Nav Property
         public ICollection<Book>? Book { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace BookShare.Appliation.contracts
     {
         void CreateBookCategory(BookCategory bookCategory);
        
-        Task<ICollection<Book>> GetAllBookCategory();
+        Task<ICollection<BookCategory>> GetAllBookCategory();
 
         Task<BookCategory> GetByBookCategoryName(string bookCategoryName);
 

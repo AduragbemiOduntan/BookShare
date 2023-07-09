@@ -38,7 +38,7 @@ namespace BookShare.Persistence.Repositories
 
         public void UpdateBook(Book book)
         {
-            return Update(book);
+            Update(book);
         }
     }
 }

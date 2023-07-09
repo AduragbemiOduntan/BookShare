@@ -16,17 +16,18 @@ namespace BookShare.Domain.Entities
         public int DonationId { get; set; }
 
         [ForeignKey(nameof(User))]
-        public string? UserName { get; set; }
+        public int UserId { get; set; }
 
         public int Quantity { get; set; }
 
         public string? BookCondition { get; set; }
 
-        public ICollection<int>? BoxNumber { get; set; }
+        public int NumberOfBoxes { get; set; }
 
         public DateTime DonationDate { get; set; } = DateTime.Now;
 
         //Navition Property
         public User? User { get; set; }
+        public ICollection<Book>? Book { get; set; }
     }
 }

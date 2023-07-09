@@ -3,6 +3,7 @@ using BookShare.Domain.Entities;
 using BookShare.Persistence.Common;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,19 +27,19 @@ namespace BookShare.Persistence.Repositories
             Delete(bookCategory);
         }
 
-        public async Task<ICollection<Book>> GetAllBookCategory()
+        public async Task<ICollection<BookCategory>> GetAllBookCategory()
         {
-            return await FindAll().OrderBy(x => x.BookCategoryId).ToListAsync(); ;
+            return await FindAll().OrderBy(x => x.BookCategoryId).ToListAsync();
         }
 
-        public Task<BookCategory> GetByBookCategoryName(string bookCategoryName)
+        public async Task<BookCategory> GetByBookCategoryName(string bookCategoryName)
         {
-            throw new NotImplementedException();
+            return await FindByCondition(x => x.BookCategoryName == bookCategoryName).FirstAsync();
         }
 
         public void UpdateBookCategory(BookCategory bookCategory)
         {
-            throw new NotImplementedException();
+            Update(bookCategory);
         }
     }
 }

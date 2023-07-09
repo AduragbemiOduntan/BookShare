@@ -31,5 +31,8 @@ namespace BookShare.Domain.Entities
         [Required(ErrorMessage = "PhoneNumber field is required.")]
         [Phone(ErrorMessage = "Invalid PhoneNumber.")]
         public string? UserPhoneNumber { get; set; }
+
+        //Nav Properties
+        public ICollection<Donation>? Donation { get; set; }
     }
 }
