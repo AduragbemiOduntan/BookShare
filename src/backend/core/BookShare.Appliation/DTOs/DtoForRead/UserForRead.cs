@@ -1,15 +1,16 @@
-﻿using BookShare.Domain.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookShare.Domain.Entities
+namespace BookShare.Appliation.DTOs.DtoForRead
 {
-    public class User : BaseEntity
+    public class UserForRead
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "The First Name field is required.")]
         public string? UserFirstName { get; set; }
 
@@ -29,8 +30,5 @@ namespace BookShare.Domain.Entities
         [Required(ErrorMessage = "PhoneNumber field is required.")]
         [DataType(DataType.PhoneNumber)]
         public string? UserPhoneNumber { get; set; }
-
-        //Nav Properties
-        public ICollection<Donation>? Donation { get; set; }
     }
 }

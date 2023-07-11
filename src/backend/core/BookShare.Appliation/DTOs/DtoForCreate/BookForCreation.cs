@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookShare.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
@@ -6,12 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using BookShare.Domain.Common;
-using System.Collections;
 
-namespace BookShare.Domain.Entities
+namespace BookShare.Appliation.DTOs.DtoForCreate
 {
-    public class Book : BaseEntity
+    public class BookForCreation
     {
         [MaxLength(100, ErrorMessage = "Title should not exceed 100 characters")]
         [Required(ErrorMessage = "The Title field is required.")]
@@ -20,10 +19,6 @@ namespace BookShare.Domain.Entities
         [MaxLength(100, ErrorMessage = " Author not exceed 100 characters")]
         [Required(ErrorMessage = "The Author field is required.")]
         public string? Author { get; set; }
-
-        [Required(ErrorMessage = "The Category Code field is required.")]
-        [ForeignKey(nameof(BookCategory))]
-        public int BookCategoryId { get; set; }
 
         [MaxLength(20, ErrorMessage = "ISBN should not exceed 20 characters")]
         [Required(ErrorMessage = "The ISBN field is required.")]
@@ -35,15 +30,7 @@ namespace BookShare.Domain.Entities
         public int Quantity { get; set; }
 
         [Required(ErrorMessage = "The Publication Date field is required.")]
+        [DataType(DataType.DateTime)]
         public DateTime PublicationDate { get; set; }
-
-        [ForeignKey(nameof(Donation))]
-        public override int Id { get; set; }
-
-        /*  [Url]
-          public string BookImageUrl { get; set; }*/
-
-        public Donation? Donation { get; set; }
-        public BookCategory? BookCategory { get; set; }
     }
 }

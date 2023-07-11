@@ -11,7 +11,7 @@ namespace BookShare.Appliation.contracts
     {
         void CreateDonation(Donation donation);
         Task<ICollection<Donation>> GetAllDonation();
-        Task<Donation> GetDonationById(int DonationId);
+        Task<Donation> GetDonationById(int donationId);
         /*Task Update(int donationId, Donation donation);*/
         void DeleteDonation(Donation donation);
     }

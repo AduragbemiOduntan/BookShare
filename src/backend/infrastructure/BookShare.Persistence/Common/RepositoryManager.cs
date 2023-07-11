@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BookShare.Persistence.Common
 {
-    public class RepositoryManager : IRepositoryManager
+    public sealed class RepositoryManager : IRepositoryManager
     {
         private readonly RepositoryContext _repositoryContext;
         private readonly  Lazy<IBookCategoryRepository> _bookCategoryRepository;

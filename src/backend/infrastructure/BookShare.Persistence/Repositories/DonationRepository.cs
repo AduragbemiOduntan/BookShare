@@ -28,12 +28,12 @@ namespace BookShare.Persistence.Repositories
 
         public async Task<ICollection<Donation>> GetAllDonation()
         {
-            return await FindAll().OrderBy(x => x.DonationId).ToListAsync();
+            return await FindAll().OrderBy(x => x.Id).ToListAsync();
         }
 
-        public async Task<Donation> GetDonationById(int DonationId)
+        public async Task<Donation> GetDonationById(int donationId)
         {
-            return await FindByCondition(x => x.DonationId == DonationId).FirstOrDefaultAsync();
+            return await FindByCondition(x => x.Id == donationId).FirstOrDefaultAsync();
         }
     }
 }

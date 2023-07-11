@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookShare.Persistence.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230709131611_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230711115034_newMigration")]
+    partial class newMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,11 +27,8 @@ namespace BookShare.Persistence.Migrations
 
             modelBuilder.Entity("BookShare.Domain.Entities.Book", b =>
                 {
-                    b.Property<int>("BookId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("Id")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookId"));
 
                     b.Property<string>("Author")
                         .IsRequired()
@@ -50,16 +47,10 @@ namespace BookShare.Persistence.Migrations
                     b.Property<DateTime?>("DateModified")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DonationId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
@@ -75,11 +66,9 @@ namespace BookShare.Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("BookId");
+                    b.HasKey("Id");
 
                     b.HasIndex("BookCategoryId");
-
-                    b.HasIndex("DonationId");
 
                     b.ToTable("books");
                 });
@@ -105,11 +94,8 @@ namespace BookShare.Persistence.Migrations
 
             modelBuilder.Entity("BookShare.Domain.Entities.Donation", b =>
                 {
-                    b.Property<int>("DonationId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("Id")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DonationId"));
 
                     b.Property<string>("BookCondition")
                         .HasColumnType("nvarchar(max)");
@@ -126,35 +112,24 @@ namespace BookShare.Persistence.Migrations
                     b.Property<DateTime>("DonationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NumberOfBoxes")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DonationId");
-
-                    b.HasIndex("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("donations");
                 });
 
             modelBuilder.Entity("BookShare.Domain.Entities.User", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -164,9 +139,6 @@ namespace BookShare.Persistence.Migrations
 
                     b.Property<DateTime?>("DateModified")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
@@ -194,7 +166,7 @@ namespace BookShare.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserId");
+                    b.HasKey("Id");
 
                     b.ToTable("users");
                 });
@@ -209,7 +181,7 @@ namespace BookShare.Persistence.Migrations
 
                     b.HasOne("BookShare.Domain.Entities.Donation", "Donation")
                         .WithMany("Book")
-                        .HasForeignKey("DonationId")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -222,7 +194,7 @@ namespace BookShare.Persistence.Migrations
                 {
                     b.HasOne("BookShare.Domain.Entities.User", "User")
                         .WithMany("Donation")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

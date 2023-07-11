@@ -29,7 +29,7 @@ namespace BookShare.Persistence.Repositories
 
         public async Task<ICollection<User>> GetAllUser()
         {
-            return await FindAll().OrderBy(x => x.UserId).ToListAsync();
+            return await FindAll().OrderBy(x => x.Id).ToListAsync();
         }
 
         public async Task<User> GetUserByEmail(string userEmail)

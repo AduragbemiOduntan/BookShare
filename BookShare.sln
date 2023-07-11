@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShare.Persistence", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShare.WebAPI", "src\backend\presentaion\BookShare.WebAPI\BookShare.WebAPI.csproj", "{46C09AB0-72A4-42ED-A5EE-B1E0D7998C3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "src\backend\core\LoggerService\LoggerService.csproj", "{79FD9439-909C-4026-B971-6E4C16A687CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerService", "src\backend\core\LoggerService\LoggerService.csproj", "{79FD9439-909C-4026-B971-6E4C16A687CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShare.ServiceRepository", "src\backend\infrastructure\BookShare.ServiceRepository\BookShare.ServiceRepository.csproj", "{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{79FD9439-909C-4026-B971-6E4C16A687CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79FD9439-909C-4026-B971-6E4C16A687CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79FD9439-909C-4026-B971-6E4C16A687CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{093251F0-1F49-4B27-8191-52C3C4C10F31} = {19065F15-C9A1-44CB-A469-29F744038CF0}
 		{46C09AB0-72A4-42ED-A5EE-B1E0D7998C3C} = {84C28598-BF2D-4F75-8159-801B69505C74}
 		{79FD9439-909C-4026-B971-6E4C16A687CC} = {ABF54F73-81E3-4E71-A14B-171A6EA488CF}
+		{DEC4F8B0-66DD-4173-A9AF-C95CBA547740} = {19065F15-C9A1-44CB-A469-29F744038CF0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5A79E27-1366-4580-A15B-FDECB928748C}

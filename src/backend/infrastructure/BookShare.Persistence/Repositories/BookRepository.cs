@@ -28,12 +28,12 @@ namespace BookShare.Persistence.Repositories
 
         public async Task<ICollection<Book>> GetAllBook()
         {
-            return await FindAll().OrderBy(x => x.BookId).ToListAsync();
+            return await FindAll().OrderBy(x => x.Id).ToListAsync();
         }
 
         public Task<Book> GetBookById(int bookId)
         {
-            return FindByCondition(x => x.BookId == bookId).FirstAsync();
+            return FindByCondition(x => x.Id == bookId).FirstAsync();
         }
 
         public void UpdateBook(Book book)

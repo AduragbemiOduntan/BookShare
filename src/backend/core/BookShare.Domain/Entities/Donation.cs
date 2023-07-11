@@ -12,13 +12,8 @@ namespace BookShare.Domain.Entities
 {
     public class Donation : BaseEntity
     {
-        [Key]
-        public int DonationId { get; set; }
-
         [ForeignKey(nameof(User))]
-        public int UserId { get; set; }
-
-        public int Quantity { get; set; }
+        public override int Id { get; set; }
 
         public string? BookCondition { get; set; }
 
