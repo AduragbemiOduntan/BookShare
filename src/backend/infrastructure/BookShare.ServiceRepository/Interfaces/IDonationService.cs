@@ -12,8 +12,8 @@ namespace BookShare.ServiceRepository.Interfaces
     public interface IDonationService
     {
         Task<ICollection<DonationForRead>> GetAllDonationsAsync();
-        Task<DonationForRead> GetDonationByIdAsync(int donationId);
+        Task<DonationForRead> GetDonationByIdAsync(string donationId);
         Task<DonationForCreation> CreateDonationAsync(DonationForCreation donationForCreation);
-        Task DeleteDonationAsynnc(int donationId);
+        Task DeleteDonationAsynnc(string donationId);
     }
 }

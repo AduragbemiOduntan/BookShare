@@ -13,9 +13,9 @@ namespace BookShare.ServiceRepository.Interfaces
     {
         Task<ICollection<UserForRead>> GetAllUsersAsync();
         /*Task<UserForRead> GetUserByEmailAsync(string userEmail);*/
-        Task<UserForRead> GetUserByIdAsync(int userId);
+        Task<UserForRead> GetUserByIdAsync(string userId);
         Task<UserForCreation> CreateUserAsync(UserForCreation userForCreation);
-        Task UpdateUserAsync(int userId, UserForUpdate userForUpdate);
-        Task DeleteUserAsynnc(int userId);
+        Task UpdateUserAsync(string userId, UserForUpdate userForUpdate);
+        Task DeleteUserAsynnc(string userId);
     }  
 }

@@ -38,7 +38,7 @@ namespace BookShare.Domain.Entities
         public DateTime PublicationDate { get; set; }
 
         [ForeignKey(nameof(Donation))]
-        public override int Id { get; set; }
+        public string? Id { get; set; }
 
         /*  [Url]
           public string BookImageUrl { get; set; }*/

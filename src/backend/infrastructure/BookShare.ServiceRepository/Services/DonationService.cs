@@ -29,7 +29,7 @@ namespace BookShare.ServiceRepository.Services
             throw new NotImplementedException();
         }
 
-        public Task DeleteDonationAsynnc(int donationId)
+        public Task DeleteDonationAsynnc(string donationId)
         {
             throw new NotImplementedException();
         }
@@ -39,7 +39,7 @@ namespace BookShare.ServiceRepository.Services
             throw new NotImplementedException();
         }
 
-        public Task<DonationForRead> GetDonationByIdAsync(int donationId)
+        public Task<DonationForRead> GetDonationByIdAsync(string donationId)
         {
             throw new NotImplementedException();
         }

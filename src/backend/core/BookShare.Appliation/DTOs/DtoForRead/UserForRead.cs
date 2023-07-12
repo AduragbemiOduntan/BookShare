@@ -9,7 +9,7 @@ namespace BookShare.Appliation.DTOs.DtoForRead
 {
     public class UserForRead
     {
-        public int Id { get; set; }
+        public string? Id { get; set; }
 
         [Required(ErrorMessage = "The First Name field is required.")]
         public string? UserFirstName { get; set; }

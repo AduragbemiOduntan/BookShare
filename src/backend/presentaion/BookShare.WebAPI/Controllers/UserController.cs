@@ -25,7 +25,7 @@ namespace BookShare.WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUser(int userId) 
+        public async Task<IActionResult> GetUser(string userId) 
         {
             var gottenUser = await _serviceManager.UserService.GetUserByIdAsync(userId);
             return Ok(gottenUser);
@@ -43,7 +43,7 @@ namespace BookShare.WebAPI.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> UpdateUser(int userId, UserForUpdate user)
+        public async Task<IActionResult> UpdateUser(string userId, UserForUpdate user)
         {
             if (user is null)
                 return BadRequest("User entry is null");
@@ -52,7 +52,7 @@ namespace BookShare.WebAPI.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteUser(int userId)
+        public async Task<IActionResult> DeleteUser(string userId)
         {
             await _serviceManager.UserService.DeleteUserAsynnc(userId);
             return NoContent();

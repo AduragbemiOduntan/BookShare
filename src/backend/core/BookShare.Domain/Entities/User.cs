@@ -17,19 +17,6 @@ namespace BookShare.Domain.Entities
         [Required(ErrorMessage = "The Last Name field is required.")]
         public string? UserLastName { get; set; }
 
-
-        [Required(ErrorMessage = "The Email field is required.")]
-        [DataType(DataType.EmailAddress)]
-        public string? UserEmail { get; set; }
-
-        [Required(ErrorMessage = "The Password field is required.")]
-        [DataType(DataType.Password)]
-        public string? UserPassword { get; set; }
-
-        [Required(ErrorMessage = "PhoneNumber field is required.")]
-        [DataType(DataType.PhoneNumber)]
-        public string? UserPhoneNumber { get; set; }
-
         //Nav Properties
         public ICollection<Donation>? Donation { get; set; }
     }

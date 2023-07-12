@@ -9,7 +9,7 @@ namespace BookShare.Appliation.DTOs.DtoForUpdate
 {
     public class UserForUpdate
     {
-       /* public int Id { get; set; }*/
+       /* public string? Id { get; set; }*/
 
        /* [Required(ErrorMessage = "The Email field is required.")]*/
         [DataType(DataType.EmailAddress)]

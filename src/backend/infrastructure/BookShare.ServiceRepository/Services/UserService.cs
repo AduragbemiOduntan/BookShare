@@ -37,7 +37,7 @@ namespace BookShare.ServiceRepository.Services
             return userToReturn;
         }
 
-        public async Task DeleteUserAsynnc(int userId)
+        public async Task DeleteUserAsynnc(string userId)
         {
             var getUserEntiry = await _repsositoryManager.UserRepository.GetUserById(userId);
 
@@ -54,7 +54,7 @@ namespace BookShare.ServiceRepository.Services
             return userEntities;
         }
 
-        public async Task<UserForRead> GetUserByIdAsync(int userId)
+        public async Task<UserForRead> GetUserByIdAsync(string userId)
         {
             var getUserEntity = await _repsositoryManager.UserRepository.GetUserById(userId);
 
@@ -70,7 +70,7 @@ namespace BookShare.ServiceRepository.Services
              return userEntity;  
          }*/
 
-        public async Task UpdateUserAsync(int userId, UserForUpdate userForUpdate)
+        public async Task UpdateUserAsync(string userId, UserForUpdate userForUpdate)
         {
             var getUserEntity = await _repsositoryManager.UserRepository.GetUserById(userId);
 

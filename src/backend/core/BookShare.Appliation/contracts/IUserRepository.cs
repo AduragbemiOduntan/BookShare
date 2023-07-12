@@ -12,7 +12,7 @@ namespace BookShare.Appliation.contracts
         void CreateUser(User user);
         Task<ICollection<User>> GetAllUser();
        /* Task<User> GetUserByEmail(string userEmail);*/
-        Task<User> GetUserById(int userId);
+        Task<User> GetUserById(string userId);
         /*Task UpdateUser(int userId, User user);*/
         void DeleteUser(User user);
     }
