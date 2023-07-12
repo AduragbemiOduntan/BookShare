@@ -12,9 +12,10 @@ namespace BookShare.ServiceRepository.Interfaces
     public interface IUserService
     {
         Task<ICollection<UserForRead>> GetAllUsersAsync();
-        Task<UserForRead> GetUserByEmailAsync(string userEmail);
+        /*Task<UserForRead> GetUserByEmailAsync(string userEmail);*/
+        Task<UserForRead> GetUserByIdAsync(int userId);
         Task<UserForCreation> CreateUserAsync(UserForCreation userForCreation);
-        Task UpdateUserAsync(string userEmail, UserForUpdate userForUpdate);
-        Task DeleteUserAsynnc(string userEmail);
+        Task UpdateUserAsync(int userId, UserForUpdate userForUpdate);
+        Task DeleteUserAsynnc(int userId);
     }  
 }

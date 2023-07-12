@@ -32,9 +32,14 @@ namespace BookShare.Persistence.Repositories
             return await FindAll().OrderBy(x => x.Id).ToListAsync();
         }
 
-        public async Task<User> GetUserByEmail(string userEmail)
+      /*  public async Task<User> GetUserByEmail(string userEmail)
         {
-            return await FindByCondition(x => x.UserEmail == userEmail).FirstAsync();
+            return await FindByCondition(x => x.UserEmail == userEmail).FirstOrDefaultAsync();
+        }*/
+
+        public async Task<User> GetUserById(int userId)
+        {
+            return await FindByCondition(x => x.Id == userId).FirstOrDefaultAsync();
         }
     }
 }

@@ -37,13 +37,13 @@ namespace BookShare.ServiceRepository.Services
             return userToReturn;
         }
 
-        public async Task DeleteUserAsynnc(string userEmail)
+        public async Task DeleteUserAsynnc(int userId)
         {
-            var getUserEntiry = await _repsositoryManager.UserRepository.GetUserByEmail(userEmail);
+            var getUserEntiry = await _repsositoryManager.UserRepository.GetUserById(userId);
 
             _repsositoryManager.UserRepository.DeleteUser(getUserEntiry);
 
-            _repsositoryManager.SaveAsync();
+            await _repsositoryManager.SaveAsync();
         }
 
         public async Task<ICollection<UserForRead>> GetAllUsersAsync()
@@ -54,17 +54,25 @@ namespace BookShare.ServiceRepository.Services
             return userEntities;
         }
 
-        public async Task<UserForRead> GetUserByEmailAsync(string userEmail)
+        public async Task<UserForRead> GetUserByIdAsync(int userId)
         {
-            var getUserEntity = await _repsositoryManager.UserRepository.GetUserByEmail(userEmail);
+            var getUserEntity = await _repsositoryManager.UserRepository.GetUserById(userId);
 
-            var userEntity = _mapper.Map<UserForRead>(getUserEntity); 
-            return userEntity;  
+            var userEntity = _mapper.Map<UserForRead>(getUserEntity);
+            return userEntity;
         }
 
-        public async Task UpdateUserAsync(string userEmail, UserForUpdate userForUpdate)
+        /* public async Task<UserForRead> GetUserByEmailAsync(string userEmail)
+         {
+             var getUserEntity = await _repsositoryManager.UserRepository.GetUserByEmail(userEmail);
+
+             var userEntity = _mapper.Map<UserForRead>(getUserEntity); 
+             return userEntity;  
+         }*/
+
+        public async Task UpdateUserAsync(int userId, UserForUpdate userForUpdate)
         {
-            var getUserEntity = await _repsositoryManager.UserRepository.GetUserByEmail(userEmail);
+            var getUserEntity = await _repsositoryManager.UserRepository.GetUserById(userId);
 
             _mapper.Map(userForUpdate, getUserEntity);
 
