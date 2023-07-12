@@ -1,4 +1,5 @@
 ﻿using BookShare.Domain.Common;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookShare.Domain.Entities
 {
-    public class User : BaseEntity
+    public class User : IdentityUser
     {
         [Required(ErrorMessage = "The First Name field is required.")]
         public string? UserFirstName { get; set; }
@@ -16,7 +17,6 @@ namespace BookShare.Domain.Entities
         [Required(ErrorMessage = "The Last Name field is required.")]
         public string? UserLastName { get; set; }
 
-        public string? UserName { get; set; }
 
         [Required(ErrorMessage = "The Email field is required.")]
         [DataType(DataType.EmailAddress)]
