@@ -30,7 +30,7 @@ namespace BookShare.ServiceRepository.Services
             throw new NotImplementedException();
         }
 
-        public Task DeleteBookAsynnc(int bookId)
+        public Task DeleteBookAsynnc(string bookId)
         {
             throw new NotImplementedException();
         }
@@ -40,12 +40,12 @@ namespace BookShare.ServiceRepository.Services
             throw new NotImplementedException();
         }
 
-        public Task<BookForRead> GetBookByIdAsync(int bookId)
+        public Task<BookForRead> GetBookByIdAsync(string bookId)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateBookAsync(int bookId, BookForUpdate bookForUpdate)
+        public Task UpdateBookAsync(string bookId, BookForUpdate bookForUpdate)
         {
             throw new NotImplementedException();
         }

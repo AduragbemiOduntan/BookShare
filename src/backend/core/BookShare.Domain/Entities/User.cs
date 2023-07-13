@@ -11,13 +11,11 @@ namespace BookShare.Domain.Entities
 {
     public class User : IdentityUser
     {
-        [Required(ErrorMessage = "The First Name field is required.")]
         public string? UserFirstName { get; set; }
 
-        [Required(ErrorMessage = "The Last Name field is required.")]
         public string? UserLastName { get; set; }
 
-        //Nav Properties
+        //Nav Property
         public ICollection<Donation>? Donation { get; set; }
     }
 }

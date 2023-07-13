@@ -11,7 +11,7 @@ namespace BookShare.Appliation.contracts
     {
         void CreateBook(Book book);
         Task<ICollection<Book>> GetAllBook();
-        Task<Book> GetBookById(int bookId);
+        Task<Book> GetBookById(string bookId);
         void UpdateBook(Book book);
         void DeleteBook(Book book);
     }

@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using BookShare.Appliation.common;
+using BookShare.Appliation.DTOs;
 using BookShare.Appliation.DTOs.DtoForCreate;
 using BookShare.Appliation.DTOs.DtoForRead;
 using BookShare.Appliation.DTOs.DtoForUpdate;
 using BookShare.Domain.Entities;
 using BookShare.ServiceRepository.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +24,13 @@ namespace BookShare.ServiceRepository.Services
         public UserService(IRepositoryManager repositoryManager, ILoggerManager logerManager, IMapper mapper)
         {
             _repsositoryManager = repositoryManager;
-            _loggerManager = logerManager; 
+            _loggerManager = logerManager;
             _mapper = mapper;
         }
 
         public async Task<UserForCreation> CreateUserAsync(UserForCreation userForCreation)
         {
-            var userEntity =  _mapper.Map<User>(userForCreation);
+            var userEntity = _mapper.Map<User>(userForCreation);
 
             _repsositoryManager.UserRepository.CreateUser(userEntity);
             await _repsositoryManager.SaveAsync();
@@ -36,6 +38,17 @@ namespace BookShare.ServiceRepository.Services
             var userToReturn = _mapper.Map<UserForCreation>(userEntity);
             return userToReturn;
         }
+
+        /*        public async Task<UserForRegistrationDto> CreateUserAsync(UserForRegistrationDto userForRegistration)
+                {
+                    var userEntity = _mapper.Map<User>(userForRegistration);
+
+                    _repsositoryManager.UserRepository.CreateUser(userEntity);
+                    await _repsositoryManager.SaveAsync();
+
+                    var userToReturn = _mapper.Map<UserForRegistrationDto>(userEntity);
+                    return userToReturn;
+                }*/
 
         public async Task DeleteUserAsynnc(string userId)
         {

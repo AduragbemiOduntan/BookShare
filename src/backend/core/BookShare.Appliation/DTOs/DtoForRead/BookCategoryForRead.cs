@@ -8,7 +8,7 @@ namespace BookShare.Appliation.DTOs.DtoForRead
 {
     public class BookCategoryForRead
     {
-        public int BookCategoryId { get; set; }
+        public string? BookCategoryId { get; set; }
 
         public string? BookCategoryName { get; set; }
 

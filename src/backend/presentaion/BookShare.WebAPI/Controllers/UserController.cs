@@ -1,6 +1,8 @@
-﻿using BookShare.Appliation.DTOs.DtoForCreate;
+﻿/*using BookShare.Appliation.DTOs;
+using BookShare.Appliation.DTOs.DtoForCreate;
 using BookShare.Appliation.DTOs.DtoForUpdate;
 using BookShare.ServiceRepository.Interfaces;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,7 +33,7 @@ namespace BookShare.WebAPI.Controllers
             return Ok(gottenUser);
         }
         //Look into this POST section
-        [HttpPost]
+*//*        [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] UserForCreation user)
         {
             if (user is null)
@@ -39,7 +41,7 @@ namespace BookShare.WebAPI.Controllers
             var createdUser = await _serviceManager.UserService.CreateUserAsync(user);
 
             return Ok(createdUser);
-        }
+        }*//*
 
 
         [HttpPut]
@@ -57,5 +59,22 @@ namespace BookShare.WebAPI.Controllers
             await _serviceManager.UserService.DeleteUserAsynnc(userId);
             return NoContent();
         }
+
+      *//*  [HttpPost]
+        //[ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> RegisterUser([FromBody] UserForRegistrationDto userForRegistration)
+        {
+            var result = await _serviceManager.AuthenticationService.RegisterUser(userForRegistration);
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.TryAddModelError(error.Code, error.Description);
+                }
+                return BadRequest(ModelState);
+            }
+            return StatusCode(201);
+        }*//*
     }
 }
+*/
