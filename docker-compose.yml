@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  bookshare.webapi:
+    ports:
+    - 80:80
+    image: ${DOCKER_REGISTRY-}booksharewebapi
+    build:
+      context: .
+      dockerfile: src/backend/presentaion/BookShare.WebAPI/Dockerfile

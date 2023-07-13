@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShare.WebAPI", "src\bac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerService", "src\backend\core\LoggerService\LoggerService.csproj", "{79FD9439-909C-4026-B971-6E4C16A687CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShare.ServiceRepository", "src\backend\infrastructure\BookShare.ServiceRepository\BookShare.ServiceRepository.csproj", "{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShare.ServiceRepository", "src\backend\infrastructure\BookShare.ServiceRepository\BookShare.ServiceRepository.csproj", "{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7239987B-9C8F-4652-9B7F-A8AE0061880F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC4F8B0-66DD-4173-A9AF-C95CBA547740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7239987B-9C8F-4652-9B7F-A8AE0061880F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7239987B-9C8F-4652-9B7F-A8AE0061880F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7239987B-9C8F-4652-9B7F-A8AE0061880F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7239987B-9C8F-4652-9B7F-A8AE0061880F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
