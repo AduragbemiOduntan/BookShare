@@ -11,6 +11,7 @@ namespace BookShare.ServiceRepository.Interfaces
         IBookCategoryService BookCategoryService { get; }
         IBookService BookService { get; }
         IDonationService DonationService { get; }
-        IUserService UserService { get; }
+     /*   IUserService UserService { get; }*/
+        IAuthenticationService AuthenticationService { get; }
     }
 }

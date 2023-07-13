@@ -12,9 +12,9 @@ namespace BookShare.ServiceRepository.Interfaces
     public interface IBookService
     {
         Task<ICollection<BookForRead>> GetAllBooksAsync();
-        Task<BookForRead> GetBookByIdAsync(int bookId);
+        Task<BookForRead> GetBookByIdAsync(string bookId);
         Task<BookForCreation> CreateBookAsync(BookForCreation bookForCreation);
-        Task UpdateBookAsync(int bookId, BookForUpdate bookForUpdate);
-        Task DeleteBookAsynnc(int bookId);
+        Task UpdateBookAsync(string bookId, BookForUpdate bookForUpdate);
+        Task DeleteBookAsynnc(string bookId);
     }
 }

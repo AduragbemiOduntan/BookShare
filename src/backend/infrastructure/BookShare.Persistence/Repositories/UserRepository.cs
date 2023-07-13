@@ -37,7 +37,7 @@ namespace BookShare.Persistence.Repositories
             return await FindByCondition(x => x.UserEmail == userEmail).FirstOrDefaultAsync();
         }*/
 
-        public async Task<User> GetUserById(int userId)
+        public async Task<User> GetUserById(string userId)
         {
             return await FindByCondition(x => x.Id == userId).FirstOrDefaultAsync();
         }

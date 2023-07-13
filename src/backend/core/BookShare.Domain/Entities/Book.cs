@@ -23,7 +23,7 @@ namespace BookShare.Domain.Entities
 
         [Required(ErrorMessage = "The Category Code field is required.")]
         [ForeignKey(nameof(BookCategory))]
-        public int BookCategoryId { get; set; }
+        public string? BookCategoryId { get; set; }
 
         [MaxLength(20, ErrorMessage = "ISBN should not exceed 20 characters")]
         [Required(ErrorMessage = "The ISBN field is required.")]
@@ -38,7 +38,7 @@ namespace BookShare.Domain.Entities
         public DateTime PublicationDate { get; set; }
 
         [ForeignKey(nameof(Donation))]
-        public override int Id { get; set; }
+        public string? Id { get; set; }
 
         /*  [Url]
           public string BookImageUrl { get; set; }*/

@@ -15,6 +15,6 @@ namespace BookShare.ServiceRepository.Interfaces
         Task<BookCategoryForRead> GetBookCategoryByNameAsync(string bookCategoryName);
         Task<BookCategoryForCreation> CreateBookCategoryAsync(BookCategoryForCreation bookCategoryForCreation);
        /* Task UpdateBookCategoryAsync(int bookCategoryId, BookCategoryForUpdate bookCategoryForUpdate);*/
-        Task DeleteBookCategoryAsynnc(int bookCategoryId);
+        Task DeleteBookCategoryAsynnc(string bookCategoryId);
     }
 }

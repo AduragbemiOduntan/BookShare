@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BookShare.Appliation.DTOs;
 using BookShare.Appliation.DTOs.DtoForCreate;
 using BookShare.Appliation.DTOs.DtoForRead;
 using BookShare.Appliation.DTOs.DtoForUpdate;
@@ -10,7 +11,7 @@ namespace BookShare.WebAPI
     {
         public ProfileMapping() 
         {
-            CreateMap<UserForCreation, User>();
+            /*CreateMap<UserForCreation, User>();*/
             CreateMap<UserForUpdate, User>();
             CreateMap<User, UserForRead>();
 
@@ -22,7 +23,9 @@ namespace BookShare.WebAPI
             CreateMap<Book, BookForRead>();
 
             CreateMap<BookCategoryForCreation, BookCategory>();
-            CreateMap<BookCategory, BookCategoryForRead>(); 
+            CreateMap<BookCategory, BookCategoryForRead>();
+
+            CreateMap<UserForRegistrationDto, User>();
         }
     }
 }

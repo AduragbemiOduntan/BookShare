@@ -29,7 +29,7 @@ namespace BookShare.ServiceRepository.Services
             throw new NotImplementedException();
         }
 
-        public Task DeleteBookCategoryAsynnc(int bookCategoryId)
+        public Task DeleteBookCategoryAsynnc(string bookCategoryId)
         {
             throw new NotImplementedException();
         }

@@ -31,7 +31,7 @@ namespace BookShare.Persistence.Repositories
             return await FindAll().OrderBy(x => x.Id).ToListAsync();
         }
 
-        public async Task<Donation> GetDonationById(int donationId)
+        public async Task<Donation> GetDonationById(string donationId)
         {
             return await FindByCondition(x => x.Id == donationId).FirstOrDefaultAsync();
         }

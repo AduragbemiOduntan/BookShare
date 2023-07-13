@@ -12,7 +12,7 @@ namespace BookShare.Appliation.DTOs.DtoForRead
 {
     public class BookForRead
     {
-        public int Id { get; set; }
+        public string? Id { get; set; }
 
         [MaxLength(100, ErrorMessage = "Title should not exceed 100 characters")]
         [Required(ErrorMessage = "The Title field is required.")]

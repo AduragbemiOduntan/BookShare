@@ -9,7 +9,7 @@ namespace BookShare.Appliation.DTOs.DtoForUpdate
 {
     public class BookForUpdate
     {
-        public int Id { get; set; }
+        public string? Id { get; set; }
 
         [Required(ErrorMessage = "The Quantity field is required.")]
         [Range(1, int.MaxValue, ErrorMessage = "The Quantity field must be a non-negative value.")]

@@ -10,7 +10,7 @@ namespace BookShare.Domain.Entities
     public class BookCategory
     {
         [Key]
-        public int BookCategoryId { get; set; }
+        public string? BookCategoryId { get; set; }
       
         public string? BookCategoryName { get; set; }
        
