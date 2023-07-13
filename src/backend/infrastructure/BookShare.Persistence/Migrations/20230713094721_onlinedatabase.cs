@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookShare.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class newMigration : Migration
+    public partial class onlinedatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -235,9 +235,9 @@ namespace BookShare.Persistence.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "5d6f8ff2-b8d8-483f-8240-39cd1006156c", null, "User", "USER" },
-                    { "b3af4f4f-eabf-4c80-898e-db43082de5ee", null, "Manager", "Manager" },
-                    { "f96d528d-dd93-4118-ac36-90a6053488c1", null, "Administrator", "ADMINISTRATOR" }
+                    { "7581c47d-f03d-450c-a611-dd0cf6a1cd0a", null, "Manager", "Manager" },
+                    { "7809e93b-47c9-49c8-9b2f-639766a6567b", null, "Administrator", "ADMINISTRATOR" },
+                    { "eca149a4-b69b-4930-8fe0-79d17b5a6116", null, "User", "USER" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -218,19 +218,19 @@ namespace BookShare.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b3af4f4f-eabf-4c80-898e-db43082de5ee",
+                            Id = "7581c47d-f03d-450c-a611-dd0cf6a1cd0a",
                             Name = "Manager",
                             NormalizedName = "Manager"
                         },
                         new
                         {
-                            Id = "f96d528d-dd93-4118-ac36-90a6053488c1",
+                            Id = "7809e93b-47c9-49c8-9b2f-639766a6567b",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "5d6f8ff2-b8d8-483f-8240-39cd1006156c",
+                            Id = "eca149a4-b69b-4930-8fe0-79d17b5a6116",
                             Name = "User",
                             NormalizedName = "USER"
                         });
