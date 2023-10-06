@@ -3,38 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{96508951-DC1D-46B0-946A-B949641B0904}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{4AE5AD46-24BF-4E4E-8407-9111681FF9BF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{ABF54F73-81E3-4E71-A14B-171A6EA488CF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{19065F15-C9A1-44CB-A469-29F744038CF0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{84C28598-BF2D-4F75-8159-801B69505C74}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShare.Domain", "src\backend\core\BookShare.Domain\BookShare.Domain.csproj", "{84119EF9-CD62-4A68-94CB-88D1E7FBF165}"
-EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{84119EF9-CD62-4A68-94CB-88D1E7FBF165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84119EF9-CD62-4A68-94CB-88D1E7FBF165}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84119EF9-CD62-4A68-94CB-88D1E7FBF165}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84119EF9-CD62-4A68-94CB-88D1E7FBF165}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{4AE5AD46-24BF-4E4E-8407-9111681FF9BF} = {96508951-DC1D-46B0-946A-B949641B0904}
-		{ABF54F73-81E3-4E71-A14B-171A6EA488CF} = {4AE5AD46-24BF-4E4E-8407-9111681FF9BF}
-		{19065F15-C9A1-44CB-A469-29F744038CF0} = {4AE5AD46-24BF-4E4E-8407-9111681FF9BF}
-		{84C28598-BF2D-4F75-8159-801B69505C74} = {4AE5AD46-24BF-4E4E-8407-9111681FF9BF}
-		{84119EF9-CD62-4A68-94CB-88D1E7FBF165} = {ABF54F73-81E3-4E71-A14B-171A6EA488CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5A79E27-1366-4580-A15B-FDECB928748C}
