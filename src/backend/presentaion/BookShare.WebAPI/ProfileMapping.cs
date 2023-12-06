@@ -26,6 +26,7 @@ namespace BookShare.WebAPI
             CreateMap<BookCategory, BookCategoryForRead>();
 
             CreateMap<UserForRegistrationDto, User>();
+
         }
     }
 }

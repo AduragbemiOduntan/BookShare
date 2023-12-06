@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookShare.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class onlinedatabase : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -65,6 +65,20 @@ namespace BookShare.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_bookCategories", x => x.BookCategoryId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "contactUs",
+                columns: table => new
+                {
+                    ContactUsId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_contactUs", x => x.ContactUsId);
                 });
 
             migrationBuilder.CreateTable(
@@ -235,9 +249,9 @@ namespace BookShare.Persistence.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "7581c47d-f03d-450c-a611-dd0cf6a1cd0a", null, "Manager", "Manager" },
-                    { "7809e93b-47c9-49c8-9b2f-639766a6567b", null, "Administrator", "ADMINISTRATOR" },
-                    { "eca149a4-b69b-4930-8fe0-79d17b5a6116", null, "User", "USER" }
+                    { "36d579aa-367c-4222-92ca-10ce0d297551", null, "Administrator", "ADMINISTRATOR" },
+                    { "96a45af5-e659-4f86-ba7a-128da01ce00e", null, "Manager", "Manager" },
+                    { "a581ace3-0fcd-40cd-aa6f-40199570693d", null, "User", "USER" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -305,6 +319,9 @@ namespace BookShare.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "books");
+
+            migrationBuilder.DropTable(
+                name: "contactUs");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

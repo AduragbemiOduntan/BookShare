@@ -1,4 +1,6 @@
 ﻿using BookShare.Appliation.DTOs;
+using BookShare.Appliation.DTOs.DtoForCreate;
+using BookShare.Domain.Entities;
 using BookShare.ServiceRepository.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +17,14 @@ namespace BookShare.WebAPI.Controllers
         {
             _serviceManager = serviceManager;
         }
+
+        [HttpPost("ContactUs")]
+        public IActionResult SendContactMessage([FromForm] ContactUs contact)
+        {
+            _serviceManager.AuthenticationService.SendContactMessage(contact);
+            return Ok("Message sent successfully!");
+        }
+
 
         [HttpPost]
         //[ServiceFilter(typeof(ValidationFilterAttribute))]

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookShare.Persistence.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230713094721_onlinedatabase")]
-    partial class onlinedatabase
+    [Migration("20231001233243_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,6 +88,28 @@ namespace BookShare.Persistence.Migrations
                     b.HasKey("BookCategoryId");
 
                     b.ToTable("bookCategories");
+                });
+
+            modelBuilder.Entity("BookShare.Domain.Entities.ContactUs", b =>
+                {
+                    b.Property<string>("ContactUsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ContactUsId");
+
+                    b.ToTable("contactUs");
                 });
 
             modelBuilder.Entity("BookShare.Domain.Entities.Donation", b =>
@@ -221,19 +243,19 @@ namespace BookShare.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7581c47d-f03d-450c-a611-dd0cf6a1cd0a",
+                            Id = "96a45af5-e659-4f86-ba7a-128da01ce00e",
                             Name = "Manager",
                             NormalizedName = "Manager"
                         },
                         new
                         {
-                            Id = "7809e93b-47c9-49c8-9b2f-639766a6567b",
+                            Id = "36d579aa-367c-4222-92ca-10ce0d297551",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "eca149a4-b69b-4930-8fe0-79d17b5a6116",
+                            Id = "a581ace3-0fcd-40cd-aa6f-40199570693d",
                             Name = "User",
                             NormalizedName = "USER"
                         });

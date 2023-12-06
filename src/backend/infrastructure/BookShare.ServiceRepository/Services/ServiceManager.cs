@@ -20,21 +20,23 @@ namespace BookShare.ServiceRepository.Services
         private readonly Lazy<IDonationService> _donationService;
      /*   private readonly Lazy<IUserService> _userService;*/
         private readonly Lazy<IAuthenticationService> _authenticationService;
+        private readonly Lazy<IEmailService> _emailService;
 
 
 
-        public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager loggerManager, IMapper mapper, UserManager<User> userManager, IConfiguration configuration)
+        public ServiceManager(IRepositoryManager repositoryManager, ILoggerManager loggerManager, IMapper mapper, UserManager<User> userManager, IConfiguration configuration, IEmailService emailService)
         {
-           /* _bookCategoryService = new Lazy<IBookCategoryService>(() =>
-            new BookCategoryService(repositoryManager, loggerManager, mapper));
-            _bookService = new Lazy<IBookService>(() =>
-            new BookService(repositoryManager, loggerManager, mapper));
-            _donationService = new Lazy<IUserService>(() =>
-            new DonationService(repositoryManager, loggerManager, mapper));*/
-           /* _userService = new Lazy<IUserService>(() =>
-            new UserService(repositoryManager, loggerManager, mapper));*/
+            /* _bookCategoryService = new Lazy<IBookCategoryService>(() =>
+             new BookCategoryService(repositoryManager, loggerManager, mapper));
+             _bookService = new Lazy<IBookService>(() =>
+             new BookService(repositoryManager, loggerManager, mapper));
+             _donationService = new Lazy<IUserService>(() =>
+             new DonationService(repositoryManager, loggerManager, mapper));*/
+            /* _userService = new Lazy<IUserService>(() =>
+             new UserService(repositoryManager, loggerManager, mapper));*/
             _authenticationService = new Lazy<IAuthenticationService>(() =>
-            new AuthenticationService(loggerManager, mapper, userManager, configuration));
+            new AuthenticationService(loggerManager, mapper, userManager, configuration, emailService));
+            
         }
 
         public IBookCategoryService BookCategoryService => _bookCategoryService.Value;

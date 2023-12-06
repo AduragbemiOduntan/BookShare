@@ -37,6 +37,7 @@ namespace BookShare.WebAPI.Extentions
         public static void ConfigureServiceManager(this IServiceCollection services)
         {
             services.AddScoped<IServiceManager, ServiceManager>();
+            services.AddScoped<IEmailService, EmailService>();
         }
 
         public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration)
